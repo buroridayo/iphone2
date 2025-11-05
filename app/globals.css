@@ -24,7 +24,7 @@ body {
   margin-inline-start: auto;
   margin-inline-end: auto;
   position: relative;
-  max-width: 1120px;
+  max-width: 1128px;
 }
 
 @layer components {
@@ -135,5 +135,34 @@ body {
 
   .btn-control {
     @apply ml-4 p-4 rounded-full bg-gray-300 backdrop-blur flex items-center justify-center;
+  }
+
+  /* Anvil field */
+  .anvil-power {
+    @apply container relative min-h-[93vh] mx-auto px-5 2xl:px-0 mt-40 bg-black;
+  }
+
+  .anvil-h2 {
+    @apply text-white font-semibold text-3xl lg:text-6xl;
+  }
+  .anvil-controls {
+    @apply absolute z-50 bottom-40  lg:bottom-40 2xl:bottom-52 left-1/2 -translate-x-1/2;
+  }
+
+  .anvil-div {
+    @apply flex items-center justify-center gap-5 mt-5;
+  }
+  .anvil-color {
+    @apply flex items-center justify-between bg-zinc-500 rounded-full px-6 py-3 gap-4;
+
+    div {
+      @apply size-7 rounded-full cursor-pointer;
+    }
+    .active {
+      @apply ring-5 size-5 ring-gray-600;
+    }
+  }
+  #canvas {
+    @apply w-full! h-[80vh]! lg:h-dvh! relative z-40;
   }
 }
