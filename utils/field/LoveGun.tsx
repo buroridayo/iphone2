@@ -1,18 +1,15 @@
-import React from "react";
-import { bookLoo } from "./Square";
-import { useRef } from "react";
+import React, { useRef } from "react";
+import { Happy } from "../Square";
 import { gsap } from "gsap";
 
-const BookMark = () => {
+const LoveGun = () => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  //state management
   const currentIndex = useRef(0);
   const slideWidth = 400;
-  const maxIndex = bookLoo.length - 1;
+  const maxIndex = Happy.length - 1;
 
-  //control button
-  const handleLight = () => {
+  const handleRight = () => {
     if (currentIndex.current > 0) {
       currentIndex.current -= 1;
       gsap.to(containerRef.current, {
@@ -23,7 +20,7 @@ const BookMark = () => {
     }
   };
 
-  const handleRight = () => {
+  const handleLeft = () => {
     if (currentIndex.current < maxIndex) {
       currentIndex.current += 1;
       gsap.to(containerRef.current, {
@@ -38,20 +35,20 @@ const BookMark = () => {
     <>
       <div className="w-full mx-auto">
         <div className="flex flex-row gap-1 py-10 min-w-max" ref={containerRef}>
-          {bookLoo.map((list) => (
+          {Happy.map((list) => (
             <div
               key={list.id}
               className="shrink-0 flex flex-col items-center justify-center rounded-3xl p-2 w-[400px] h-full text-center"
             >
               <img
                 src={list.image}
-                alt={`photo-${list.id}`}
-                className="rounded-2xl object-cover h-ful w-full mb-4 hover:scale-105 duration-200"
+                key={`photo-${list.id}`}
+                className="rounded-2xl object-cover h-full w-full mb-4"
               />
               <div className="space-y-1">
-                {list.textList.map((text) => (
-                  <p key={text} className="text-white text-sm sm:text-base ">
-                    {text}
+                {list.textList.map((free) => (
+                  <p key={free} className="text-white text-sm sm:text-base">
+                    {free}
                   </p>
                 ))}
               </div>
@@ -59,13 +56,12 @@ const BookMark = () => {
           ))}
         </div>
         <div className="flex flex-row justify-end gap-5">
-          {/* light button */}
           <button
-            className="p-3 bg-zinc-800 rounded-full shadow hover:bg-gray-400"
-            onClick={handleLight}
+            className="p-3 bg-zinc-800 rounded-full shadow hover:bg-blue-200"
+            onClick={handleLeft}
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org./2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={5}
@@ -79,13 +75,12 @@ const BookMark = () => {
               />
             </svg>
           </button>
-          {/* right button */}
           <button
-            className="p-3 bg-zinc-800 rounded-full  hover:bg-gray-400"
+            className="p-3 bg-zinc-800 rounded-full shadow hover:bg-blue-200"
             onClick={handleRight}
           >
             <svg
-              xmlns="http://www.w3.org/2000/svg"
+              xmlns="http://www.w3.org./2000/svg"
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth={5}
@@ -105,4 +100,4 @@ const BookMark = () => {
   );
 };
 
-export default BookMark;
+export default LoveGun;

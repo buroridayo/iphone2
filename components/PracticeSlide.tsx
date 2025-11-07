@@ -1,7 +1,33 @@
 "use client";
-import BookMark from "@/utils/BookMark";
+import BookMark from "@/utils/field/BookMark";
+import LoveGun from "@/utils/field/LoveGun";
+import TailDj from "@/utils/field/TailDj";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const PracticeSlide = () => {
+  const refs = useRef<Array<HTMLDivElement | null>>([]);
+
+  useEffect(() => {
+    refs.current.forEach((el, i) => {
+      if (!el) return;
+      gsap.to(el, {
+        opacity: 1,
+        y: 0,
+        duration: 1,
+        ease: "power3.inOut",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 80%",
+          toggleActions: "play none none none",
+        },
+      });
+    });
+  });
+
   return (
     <section className="h-fit w-full overflow-hidden bg-black sm:py-32 py-20 sm:px-10 px-5">
       <div className="screen-max-width">
@@ -11,7 +37,17 @@ const PracticeSlide = () => {
             <p className="lg:text-6xl md:text-5xl text-3xl">Even more magic</p>
           </div>
         </div>
-        <BookMark />
+        {[BookMark, TailDj, LoveGun].map((Cpt, i) => (
+          <div
+            key={i}
+            ref={(el) => {
+              refs.current[i] = el;
+            }}
+            className="opacity-0 translate-y-20"
+          >
+            <Cpt />
+          </div>
+        ))}
       </div>
     </section>
   );
