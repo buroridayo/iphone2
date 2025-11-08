@@ -3,6 +3,7 @@ import Naver from "@/components/Naver";
 import CursorCheck from "@/components/CursorCheck";
 import Anvil from "@/components/Anvil";
 import PracticeSlide from "@/components/PracticeSlide";
+import Kumatyan from "@/components/Kumatyan";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <CursorCheck />
       <Anvil />
       <PracticeSlide />
+      <Kumatyan />
     </main>
   );
 }

@@ -1,6 +1,9 @@
 //SquareBox video & photo aria
 
 import {
+  pen1,
+  pen2,
+  pen3,
   photo1,
   photo10,
   photo11,

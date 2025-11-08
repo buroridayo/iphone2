@@ -32,3 +32,13 @@ export const photo13 = "/photo/ios13.jpg";
 export const photo14 = "/photo/ios14.jpg";
 export const photo15 = "/photo/ios15.jpg";
 export const photo16 = "/photo/ios16.jpg";
+
+//IphoneMake photo
+export const pen1 = "/photo/iphone9.jpg";
+export const pen2 = "/photo/iphone10.jpg";
+export const pen3 = "/photo/iphone11.jpg";
+export const pen4 = "/photo/iphone12.png";
+export const pen5 = "/photo/iphone13.jpg";
+export const pen6 = "/photo/iphone14.jpg";
+export const pencil = "/battery-full.svg";
+export const pencil2 = "film.svg";
