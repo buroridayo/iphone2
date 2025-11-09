@@ -5,9 +5,10 @@ import IphoneMake3 from "@/uidayo/Aria/IphoneMake3";
 import NativeOption from "@/uidayo/NativeOption";
 import { NativeSelect } from "@/uidayo/NativeSelect";
 import { gsap } from "gsap";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const Kumatyan = () => {
+  const [selectedModel, setSelectedModel] = useState("");
   return (
     <section className="bg-black">
       <div className="screen-max-width rounded-2xl bg-zinc-800 h-full p-10">
@@ -23,9 +24,12 @@ const Kumatyan = () => {
             <p className="text-blue-800 flex items-center text-lg">
               compare to iPhone 17 Pro:
             </p>
-            <NativeSelect defaultValue="">
+            <NativeSelect
+              onChange={(e) => setSelectedModel(e.target.value)}
+              defaultValue=""
+            >
               <NativeOption value="">iPhone 15 Pro Max</NativeOption>
-              <NativeOption value="iPhone 14 Pro Max">
+              <NativeOption value="iPhone 14 pro Max">
                 iPhone 14 Pro Max
               </NativeOption>
               <NativeOption value="iPhone 13 Pro Max">
@@ -39,10 +43,9 @@ const Kumatyan = () => {
             A few ways iPhone 17 Pro gives you more
           </p>
           <div className="flex flex-wrap">
-            {/* any more haha */}
-            <IphoneMake />
-            <IphoneMake2 />
-            <IphoneMake3 />
+            {selectedModel === "" && <IphoneMake />}
+            {selectedModel === "iPhone 14 pro Max" && <IphoneMake2 />}
+            {selectedModel === "iPhone 13 Pro Max" && <IphoneMake3 />}
           </div>
         </div>
         <div className="p-10 flex flex-col items-center">

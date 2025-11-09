@@ -85,7 +85,7 @@ const IphoneMake2 = () => {
         {/* part6 */}
 
         <div className="flex flex-col items-center text-center bg-black p-4 rounded-lg shadow">
-          <div className="relative">
+          <div className="relative m-10">
             <Image
               src={pencil2}
               alt="film"
@@ -94,7 +94,7 @@ const IphoneMake2 = () => {
               className="inline-block"
             />
           </div>
-          <p className="text-gray-400 font-medium mb-4">
+          <p className="text-gray-400 font-medium">
             Record&nbsp;video&nbsp;in
             4K&nbsp;120&nbsp;fps&nbsp;Dolby&nbsp;Vision
           </p>

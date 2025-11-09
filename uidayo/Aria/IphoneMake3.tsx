@@ -85,7 +85,7 @@ const IphoneMake3 = () => {
         {/* part6 */}
 
         <div className="flex flex-col items-center text-center bg-black p-4 rounded-lg shadow">
-          <div className="relative">
+          <div className="relative m-10">
             <Image
               src={pencil2}
               alt="film"

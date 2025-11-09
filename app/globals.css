@@ -139,7 +139,7 @@ body {
 
   /* Anvil field */
   .anvil-power {
-    @apply container relative min-h-[93vh] mx-auto px-5 2xl:px-0 mt-40 bg-black;
+    @apply relative min-h-[93vh] mx-auto px-5 2xl:px-0  bg-black;
   }
 
   .anvil-h2 {
